@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/detail.css" />
+    
+  </head>
+  <body>
+    
+    <section class="description">
+      <h1 style="text-align: center">คำนวณหาพื้นที่เรขาคณิต</h1>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="./images/square.png" alt="" />
+            <h3 style="text-align: center;">มีพื้นที่ = <span id="result">- หน่วย</span></h3> 
+          </div>
+          <div class="grid-item box">
+            <h1>สี่เหลี่ยมคางหมู</h1>
+            <div style=" margin-top:0; padding-left:20px ;">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, ex.</p>
+            <h3>สูตรหาพื้นที่</h3>
+            <p>พื้นที่ = ½ x ฐาน x สูง</p>
+            
+            <div style="margin-bottom: 20px;">ฐาน : <input type="text" id="base"></div>
+            <div style="margin-bottom: 30px;">สูง : <input type="text" id="height"></div>
+            <div style="margin-bottom: 50px;"><button id="btnCal">คำนวนพื้นที่</button></div>
+            </div>
+          </div>
+          </div>
+      </section>
+  
+<script type="text/javascript">
+  function calPig(base,height){
+    const cal= (1/2)*base*height
+    return cal
+  }
+  let obj_btncal = document.getElementById("btnCal");
+    obj_btncal.addEventListener('click', () => {
+
+      const int_base = Number(document.getElementById("base").value);
+      const int_height = Number(document.getElementById("height").value);
+      console.log(int_base)
+      console.log(int_height)
+
+      const obj_result = document.getElementById("result")
+      obj_result.innerHTML= `${calPig(int_base,int_height)} หน่วย`
+
+      document.getElementById("base").value=""
+      document.getElementById("height").value=""
+
+    });
+
+</script>
+
+  </body>
+</html>
